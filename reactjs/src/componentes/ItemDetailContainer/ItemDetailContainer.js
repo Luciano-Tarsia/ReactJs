@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { pedirItem } from "../../helpers/pedirDatos";
+import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export const ItemDetailContainer = () => {
 
@@ -13,7 +14,7 @@ export const ItemDetailContainer = () => {
     
     return(
         <div>
-            {/* {item && <ItemDetail item={item}/>} */}
+            {item && <ItemDetail item={item}/>}
         </div>
     )
 }
