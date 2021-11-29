@@ -1,25 +1,53 @@
-import React from "react";
-import { useNavigate } from "react-router";
-import { ItemCount } from "../ItemCount/ItemCount";
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router'
+import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
+import { useCounter } from '../../hooks/useCounter'
+import { ItemCount } from '../ItemCount/ItemCount'
 
 export const ItemDetail = ({item}) => {
 
-    const navigate = useNavigate()
+    const { agregarAlCarrito, isInCart } = useContext(CartContext)
 
+    const {counter, increment, decrement} = useCounter(0, item.stock, 0)
+
+    const navigate = useNavigate()
+    
     const handleVolver = () => {
         navigate(-1)
     }
 
-    return(
-        <div style={{margin:0, width:"15%", backgroundColor:"red", display:"flex", flexDirection:"column", alignContent:"center"}}>
+    const handleAgregar = () => {
+        
+        counter > 0 && agregarAlCarrito({
+                            id: item.id,
+                            precio: item.precio,
+                            nombre: item.nombre,
+                            cantidad: counter
+                        })
+    }
+
+    return (
+        <div className="container m-5">
             <img src={item.img} alt={item.nombre}/>
-            <h3 style={{textAlign:'center'}}>{item.nombre}</h3>
-            <p style={{textAlign:'center'}}>Precio: ${item.precio}</p>
-            <p style={{textAlign:'center'}}>{item.desc}</p>
-            <p style={{textAlign:'center'}}>{item.cat}</p>
+            <h3>{item.nombre}</h3>
+            <p>Precio: ${item.precio}</p>
+            <p>{item.desc}</p>
 
-            <ItemCount/>
+            {
+                !isInCart(item.id)
+                    ?   <ItemCount 
+                            increment={increment}
+                            decrement={decrement} 
+                            onAdd={handleAgregar} 
+                            counter={counter}
+                        />
+                    :   <Link to="/cart" className="btn btn-success my-3">Terminar mi compra</Link>
+            }
 
+
+            <br/>
+            
             <button className="btn btn-primary" onClick={handleVolver}>Volver</button>
         </div>
     )

@@ -1,23 +1,17 @@
-import React, {useState} from "react";
+import React from 'react'
 
-export const ItemCount = ({stock = 10, initial = 0}) => {
+export const ItemCount = ( {increment, decrement, onAdd, counter} ) => {
 
-    const [cantidad, setCantidad] = useState(initial)
 
-    const resta = () => {
-        cantidad > initial && setCantidad(cantidad - 1)
-    }
+    return (
+        <div className="m-4">
+            <button onClick={decrement} className="btn btn-outline-primary">-</button>
+            <span className="mx-2">{counter}</span>
+            <button onClick={increment} className="btn btn-primary">+</button>
 
-    const suma = () => {
-        cantidad < stock && setCantidad(cantidad + 1)
-    }
-
-    return(
-        <div>
-            <button onClick={resta} className="btn btn-primary">-</button>
-            <span className="mx-2">{cantidad}</span>
-            <button onClick={suma} className="btn btn-primary">+</button>
+            <div>
+                <button className="btn btn-success my-2" onClick={onAdd}>Agregar</button>
+            </div>
         </div>
     )
-
 }
