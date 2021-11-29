@@ -5,7 +5,7 @@ export const ItemList = ({items}) => {
     return (
         <div>
             <h2 style={{textAlign:'center'}}>Productos</h2>
-            <div style={{display:"flex", flexDirection:'row', alignItems: 'center', justifyContent: 'space-around'}}>
+            <div style={{display:"flex", flexDirection:'row', alignItems: 'center', justifyContent: 'space-around', flexWrap:'wrap'}}>
                 {
                     items.map((el) => <Item key={el.id} item={el}/>)
                 }
