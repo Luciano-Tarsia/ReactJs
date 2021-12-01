@@ -1,17 +1,18 @@
-import {stock} from "../data/stock"
+import { stock } from "../data/stock"
 
 export const pedirDatos = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise( (resolve, reject) => {
         setTimeout(() => {
             resolve(stock)
-        }, 2000)
-    })
+        }, 1000)
+    } )
 }
 
 export const pedirItem = (id) => {
-    return new Promise((resolve, reject) => {
+    console.log(id)
+    return new Promise( (resolve, reject) => {
         setTimeout(() => {
-            resolve( stock.find(el => el.id ===id))
-        },2000)
-    })
+            resolve( stock.find(el => el.id === id) )
+        }, 1000)
+    } )
 }
