@@ -7,13 +7,13 @@ export const NavBar = () => {
 
     return (
         <header className="navbar px-5">
-            <Link to="/"><h1>Coder RJ</h1></Link>
+            <Link to="/" className="links"><h1>Coder RJ</h1></Link>
             
             <nav>
                 <ul>
-                    <li><Link to="/category/zapatillas">Zapatillas</Link></li>
-                    <li><Link to="/category/buzos">Buzos</Link></li>
-                    <li><Link to="/category/remeras">Remeras</Link></li>
+                    <li><Link to="/category/zapatillas" className="links">Zapatillas</Link></li>
+                    <li><Link to="/category/buzos" className="links">Buzos</Link></li>
+                    <li><Link to="/category/remeras" className="links">Remeras</Link></li>
                 </ul>
             </nav>
 

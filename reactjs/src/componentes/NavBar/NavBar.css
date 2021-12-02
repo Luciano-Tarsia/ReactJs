@@ -19,3 +19,13 @@ nav ul{
 nav ul li{
     padding: 10px;
 }
+
+.links{
+    text-decoration: none;
+    font-size: large;
+    margin-right: 0.3cm;
+}
+
+.links:hover{
+    color: white;
+}

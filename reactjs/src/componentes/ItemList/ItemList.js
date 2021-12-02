@@ -4,7 +4,7 @@ import { Item } from "../Item/Item";
 export const ItemList = ({items}) => {
     return (
         <div>
-            <h2 style={{textAlign:'center'}}>Productos</h2>
+            <h2 style={{textAlign:'center', marginTop:"0.5cm", marginBottom:"0.5cm"}}>Productos</h2>
             <div style={{display:"flex", flexDirection:'row', alignItems: 'center', justifyContent: 'space-around', flexWrap:'wrap'}}>
                 {
                     items.map((el) => <Item key={el.id} item={el}/>)

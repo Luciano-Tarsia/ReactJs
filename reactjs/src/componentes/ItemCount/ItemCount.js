@@ -1,4 +1,5 @@
 import React from 'react'
+import './ItemCount.css'
 
 export const ItemCount = ( {increment, decrement, onAdd, counter, min, max} ) => {
 
@@ -20,12 +21,14 @@ export const ItemCount = ( {increment, decrement, onAdd, counter, min, max} ) =>
 
 
     return (
-        <div className="m-4">
+        <div className="count-general">
+            <div className="count">
             <button {...btnStyles.btnRestar}>-</button>
 
             <span className="mx-2">{counter}</span>
 
             <button {...btnStyles.btnSumar}>+</button>
+            </div>
 
             <div>
                 <button 

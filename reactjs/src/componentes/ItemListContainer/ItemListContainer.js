@@ -13,9 +13,7 @@ export const ItemListContainer = () => {
     const {categoryId} = useParams()
     
     useEffect(()=>{
-
         setLoading(true)
-
         // crear la referencia a la colección
         const productosRef = collection(db, 'productos')
         const q = categoryId ? query(productosRef, where('cat', '==', categoryId)) : productosRef
@@ -28,15 +26,11 @@ export const ItemListContainer = () => {
                         ...doc.data()
                     }
                 })
-                console.log(productos)
-
                 setItems(productos)
             })
             .finally(() => {
                 setLoading(false)
-            })
-       
-
+            })      
     }, [categoryId])
 
 

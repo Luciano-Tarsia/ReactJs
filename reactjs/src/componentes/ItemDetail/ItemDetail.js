@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import { useCounter } from '../../hooks/useCounter'
 import { ItemCount } from '../ItemCount/ItemCount'
+import './ItemDetail.css'
 
 export const ItemDetail = ({item}) => {
 
@@ -28,11 +29,11 @@ export const ItemDetail = ({item}) => {
     }
 
     return (
-        <div className="container m-5">
-            <img src={item.img} alt={item.nombre}/>
-            <h3>{item.nombre}</h3>
-            <p>Precio: ${item.precio}</p>
-            <p>{item.desc}</p>
+        <div className="detail">
+            <img src={item.img} alt={item.nombre} style={{margin:"0"}}/>
+            <h3 style={{marginBottom:"0", marginTop:"0.3cm"}}>{item.nombre}</h3>
+            <p style={{marginBottom:"0"}}>Precio: ${item.precio}</p>
+            <p >{item.desc}</p>
 
             {
                 !isInCart(item.id)
@@ -46,11 +47,8 @@ export const ItemDetail = ({item}) => {
                         />
                     :   <Link to="/cart" className="btn btn-success my-3">Terminar mi compra</Link>
             }
-
-
-            <br/>
             
-            <button className="btn btn-primary" onClick={handleVolver}>Volver</button>
+            <button className="btn btn-primary" onClick={handleVolver} >Volver</button>
         </div>
     )
 }

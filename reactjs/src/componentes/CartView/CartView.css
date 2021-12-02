@@ -1,0 +1,30 @@
+.principal{
+    display: flex;
+    flex-direction: column;
+    padding-left: 1cm;
+    align-items: flex-start;
+}
+
+.principal-producto{
+    display: flex;
+    align-items: center;
+}
+
+.principal-producto-aux{
+    display: flex;
+    flex-direction: column;
+    max-height: 5cm;
+}
+
+hr { 
+    color: gray;
+    border-style: inset;
+    border-width: 1px;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+}
+
+.space{
+    margin:5px;
+}

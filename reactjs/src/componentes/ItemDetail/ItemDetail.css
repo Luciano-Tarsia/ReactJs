@@ -1,0 +1,11 @@
+.detail{
+    display: flex;
+    flex-direction: column;
+    max-width: 6cm;
+    align-items: center;
+    margin: 1cm;
+    border: "solid";
+    border-color: "lightblue";
+    background-color: "lightblue";
+    border-radius: "2%";
+}
